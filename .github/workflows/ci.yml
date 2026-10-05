@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  template-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hooks are valid bash
+        run: |
+          for f in .claude/hooks/*.sh scripts/*.sh; do
+            echo "bash -n $f"
+            bash -n "$f"
+          done
+
+      - name: settings.json is valid JSON
+        run: python3 -m json.tool .claude/settings.json > /dev/null
+
+      - name: Every research report ends with a verdict
+        run: bash scripts/check-reports.sh
+
+      - name: Hooks run cleanly
+        run: |
+          bash .claude/hooks/session-start.sh > /dev/null
+          echo '{}' | bash .claude/hooks/stop-cycle.sh
