@@ -2,6 +2,8 @@
 
 # solo-ai-workshop
 
+![solo-ai-workshop](.github/social-preview.png)
+
 A gate-first operating system for a solo builder working with Claude Code.
 One registry of products, one folder per question, and a rule that every piece
 of research ends in a verdict: **build**, **defer** or **closed**.
