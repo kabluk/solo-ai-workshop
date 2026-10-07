@@ -16,7 +16,17 @@ Line format: `date | project | repeat (how many times) → home`.
   (2 ideas) → session rule 6 "gates before the ocean".
 -->
 
+## 2026-10
+
+- 10.07 | workshop | non-business research (used-car search) run in the workshop
+  (1 cycle) → no repeat ≥ 2, nothing extracted.
+
 ## Open candidates
 
 Repeats seen once more than noise but not yet given a home. One line each,
 with the count and what would settle the home.
+
+- Apify `apify/facebook-marketplace-scraper`: city slug `losangeles` silently
+  returns national results, `la` works; filter by lat/lon after the run
+  (seen 1×, 2026-10). Becomes a skill or CLAUDE.md gotcha on the second
+  Marketplace search.
