@@ -26,4 +26,5 @@ jobs:
       - name: Hooks run cleanly
         run: |
           bash .claude/hooks/session-start.sh > /dev/null
+          CLAUDE_PROJECT_DIR=$PWD bash .claude/hooks/skill-catalog.sh | grep -q '^## Skill catalog'
           echo '{}' | bash .claude/hooks/stop-cycle.sh

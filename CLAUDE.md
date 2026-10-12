@@ -74,6 +74,7 @@ missing key, say once which variable or CI secret it belongs in.
 | Cross-project working agreements (P-NN) | `docs/playbook/COLLABORATION.md` |
 | Harvest ledger | `docs/playbook/HARVEST.md` |
 | Research | `research/YYYY-MM-slug/REPORT.md` |
+| Which skill for what (every skill by job; printed at session start) | `.claude/skills/skill-catalog/` |
 | Skills: `harvest`, `external-review`, `writing-for-agents` | `.claude/skills/` |
 | Feasibility gates (installed separately) | `.claude/skills/idea-gates/` |
 | Hooks | `.claude/hooks/`, wired in `.claude/settings.json` |
