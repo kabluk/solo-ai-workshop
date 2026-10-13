@@ -32,9 +32,8 @@ new skill, not a reason to skip the catalog.
 Kind: **skill**, **agent** (subagent), **command** (slash command),
 **env** (ships with Claude Code / claude.ai, nothing to install).
 Source: **kit** = `kabluk/claude-code-kit`, **idea-gates** = `kabluk/idea-gates`,
-**lab** = `kabluk/lab` only. Any other source names the product repo whose
-`.claude/skills/` holds the skill today (not yet moved into the kit; when two
-repos are named, their copies differ).
+**lab** = `kabluk/lab` only. An `owner/repo` source is a third-party skill: install it from that public
+repository, keep its licence, and do not republish it as ours.
 
 ### 1. Idea and validation (before any code)
 
@@ -59,8 +58,8 @@ repos are named, their copies differ).
 |---|---|---|---|
 | `product-lead` | agent | Goal, users, requirements, scope, success criteria. | kit |
 | `software-architect` | agent | Module boundaries, contracts, cross-cutting technical decisions. | kit |
-| `project-orchestrator` | skill | Start of a product session: restore state from `docs/project/` (HANDOFF, STATUS, DECISIONS), split work across roles, keep project memory. The skill form of the command below. | carriertruth, detnav |
-| `to-questionnaire` | skill | A decision you cannot answer yourself: turn it into a questionnaire someone else (a client, a partner) fills in. | carriertruth |
+| `project-orchestrator` | skill | Start of a product session: restore state from `docs/project/` (HANDOFF, STATUS, DECISIONS), split work across roles, keep project memory. The skill form of the command below. | kit |
+| `to-questionnaire` | skill | A decision you cannot answer yourself: turn it into a questionnaire someone else (a client, a partner) fills in. | mattpocock/skills |
 | `project-orchestrator` | command | A large project: split work by role, keep memory in `docs/project/`, resume a project in a new session. | kit |
 | `workflow-graph` | command | Many tasks with dependencies: build `docs/project/GRAPH.yaml`. | kit |
 | `task-loop` | command | Execute one GRAPH node in a bounded implement–verify–fix loop. | kit |
@@ -77,9 +76,9 @@ repos are named, their copies differ).
 | `data-engineer` | agent | Data model, migrations, queries, analytics events, ETL. | kit |
 | `devops-engineer` | agent | CI/CD, containers, infra, deploy, observability. | kit |
 | `context-memory-engineering` | skill | Building an agent or LLM pipeline: what goes into one call vs. what persists. | kit |
-| `glass-stage` | skill | A dark premium hero or landing "like Linear / Stripe": real product screens in phones, glass, glow, floating cards, kie.ai backgrounds and 3D icons. | ivindex, detnav |
-| `mockup-in-skin` | skill | Show interface options built from the product's own files, not a page drawn from scratch: "show three variants", "that is not our design". | ivindex |
-| `skill-bakeoff` | skill | Blind comparison of design skills on one product: each draws the same pages from scratch on real data; the owner picks by screenshots. | ivindex, homeequitymath |
+| `glass-stage` | skill | A dark premium hero or landing "like Linear / Stripe": real product screens in phones, glass, glow, floating cards, kie.ai backgrounds and 3D icons. | kit |
+| `mockup-in-skin` | skill | Show interface options built from the product's own files, not a page drawn from scratch: "show three variants", "that is not our design". | kit |
+| `skill-bakeoff` | skill | Blind comparison of design skills on one product: each draws the same pages from scratch on real data; the owner picks by screenshots. | kit |
 | `claude-api` | env | Any code that calls Claude / the Anthropic SDK: models, pricing, caching, tools. | env |
 | `artifact-design` | env | A one-off page, report or prototype published as an Artifact. | env |
 | `dataviz` | env | Any chart, dashboard or KPI tile. | env |
@@ -89,10 +88,10 @@ repos are named, their copies differ).
 | Name | Kind | Reach for it when | Source |
 |---|---|---|---|
 | `gate` | skill | After fixing a bug or data defect: a test that fails with the fix mutated away, checked live. | kit |
-| `diagnosing-bugs` | skill | A hard bug or a performance regression: "debug this", something broken, throwing, failing or slow. | carriertruth |
-| `click-audit` | skill | "Do all the buttons work?": clicks every control on the listed pages, checks every link, classifies what each one actually did. | detnav |
-| `ux-designer` | skill | UX/UI principles for building or critiquing: accessibility (WCAG, EAA), microcopy, forms, navigation, onboarding, i18n, design systems. | detnav |
-| `ux-signoff-loop` | skill | "Make it beautiful", "check it like a UX designer", or a big UI change: an independent reviewer against fixed rule sets, fix, repeat until sign-off. | homeequitymath |
+| `diagnosing-bugs` | skill | A hard bug or a performance regression: "debug this", something broken, throwing, failing or slow. | mattpocock/skills |
+| `click-audit` | skill | "Do all the buttons work?": clicks every control on the listed pages, checks every link, classifies what each one actually did. | kit |
+| `ux-designer` | skill | UX/UI principles for building or critiquing: accessibility (WCAG, EAA), microcopy, forms, navigation, onboarding, i18n, design systems. | szilu/ux-designer-skill |
+| `ux-signoff-loop` | skill | "Make it beautiful", "check it like a UX designer", or a big UI change: an independent reviewer against fixed rule sets, fix, repeat until sign-off. | kit |
 | `qa-engineer` | agent | Test strategy, acceptance criteria, regression audit after implementation. | kit |
 | `ux-ease-audit` | skill | "Rate the UX", "where will people get stuck", a re-audit before release: persona, tasks, 1–10 score. | kit |
 | `external-review` | skill | An outside opinion from other LLMs on a product or idea; pasted-back reviews to verify. | kit |
@@ -105,7 +104,7 @@ repos are named, their copies differ).
 | Name | Kind | Reach for it when | Source |
 |---|---|---|---|
 | `site-launch` | skill | Before opening a new site to traffic, moving domain or host, "nothing in Google" or empty analytics: live check, analytics event, Search Console, legal, forms, monitoring. | kit |
-| `project-pulse` | skill | Give a live project a pulse: daily metrics committed to the repo and a weekly analyst routine that sends the owner a diagnosis and actions. | carriertruth |
+| `project-pulse` | skill | Give a live project a pulse: daily metrics committed to the repo and a weekly analyst routine that sends the owner a diagnosis and actions. | kit |
 | `growth-strategist` | agent | Positioning, launch plan, marketing experiments, content, growth metrics — once goal and audience are defined. | kit |
 
 ### 6. Access, credentials and environment
@@ -125,7 +124,7 @@ repos are named, their copies differ).
 | `harvest` | skill | End of every cycle, before handoff, whenever something repeats: turn it into a skill, rule or gotcha. | kit |
 | `writing-for-agents` | skill | Creating or editing any skill, `CLAUDE.md` or `AGENTS.md`. | kit |
 | `skill-creator` | env | Evals and description tuning for a skill that triggers badly. | env |
-| `wait-what` | skill | The owner did not follow the last message: stop and re-pitch it plainly. | carriertruth |
+| `wait-what` | skill | The owner did not follow the last message: stop and re-pitch it plainly. | mattpocock/skills |
 | `task-profiler` | command | Choose Haiku / Sonnet / Opus for a request by complexity and risk. | kit |
 | `next-step-coach` | command | 2–3 next steps plus one web-dev term to learn, after a finished task. | kit |
 | `caveman` | skill | Terse output mode to save tokens. | kit |
@@ -142,9 +141,9 @@ bash /tmp/kit/scripts/kit-sync.sh install skills/NAME    # or agents/NAME, comma
 bash /tmp/kit/scripts/kit-sync.sh update                 # bring differing copies up to the kit
 # idea-gates lives in its own repo:
 git clone https://github.com/kabluk/idea-gates .claude/skills/idea-gates
-# a skill whose source is a product repo (e.g. carriertruth):
-git clone --depth 1 https://github.com/kabluk/carriertruth /tmp/src
-cp -r /tmp/src/.claude/skills/NAME .claude/skills/
+# a third-party skill (source owner/repo), with its LICENSE:
+git clone --depth 1 https://github.com/OWNER/REPO /tmp/src
+cp -r /tmp/src/skills/NAME .claude/skills/   # path inside the repo may differ
 ```
 
 A copy changed on purpose (a translation, a template rewrite) goes in
