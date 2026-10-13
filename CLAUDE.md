@@ -51,6 +51,13 @@ in the inbox. The three end-of-cycle options are each marked `[here]` or
 `[new session: repo]`. Method: the `session-focus` skill; the `thread-check.sh`
 hook repeats the thread before every owner message.
 
+## Owner buttons
+
+A request to merge a PR or press any owner-only button is a short plain-language
+card, never a bare link: link first; what it is in one sentence; what changes
+after it and what does not; the risk and how to undo it; the exact taps; what
+happens next. Details: `session-focus`, playbook P-18.
+
 ## Operating instructions
 
 **Session start.** The `SessionStart` hook prints the ritual, the research
