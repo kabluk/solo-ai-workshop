@@ -34,8 +34,17 @@ this repository. Products live in their own repositories.
 
 ## One session, one thread
 
-The first working reply names the session's thread:
-`**Thread:** goal · repo · done when …`. A request for another goal, repo or
+The first working reply, and every new task, opens with a start block:
+
+```
+**Thread:** goal · repo · done when …
+**Skills:**
+- `name` — what it does for this task
+```
+
+Skills come from the catalog (`skill-catalog`, printed at session start), two or
+three, each with its use for this task. None fits → say so ("none fits — by
+hand"); a repeating task with no skill is a `harvest` candidate. A request for another goal, repo or
 question is a new thread: do not start it here; offer a new session with a ready
 prompt (create it yourself when a tool allows), a deliberate switch, or parking it
 in the inbox. The three end-of-cycle options are each marked `[here]` or
