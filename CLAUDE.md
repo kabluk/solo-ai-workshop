@@ -34,7 +34,10 @@ this repository. Products live in their own repositories.
 
 ## One session, one thread
 
-The first working reply, and every new task, opens with a start block:
+Once the session's goal is clear (usually after one or two owner messages; at once
+when the first message states a concrete task), give a start block. Until then,
+clarify and answer, but change no file and make no commit; the block comes before
+the first file change at the latest. Every new task inside the thread gets one too:
 
 ```
 **Thread:** goal · repo · done when …
