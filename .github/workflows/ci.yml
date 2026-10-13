@@ -26,5 +26,6 @@ jobs:
       - name: Hooks run cleanly
         run: |
           bash .claude/hooks/session-start.sh > /dev/null
+          echo '{}' | bash .claude/hooks/thread-check.sh | grep -q '^No session thread named yet'
           CLAUDE_PROJECT_DIR=$PWD bash .claude/hooks/skill-catalog.sh | grep -q '^## Skill catalog'
           echo '{}' | bash .claude/hooks/stop-cycle.sh

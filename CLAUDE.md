@@ -32,6 +32,16 @@ this repository. Products live in their own repositories.
    survivors get market analysis. Analysis of an idea whose first step the
    founder cannot take is thrown-away work.
 
+## One session, one thread
+
+The first working reply names the session's thread:
+`**Thread:** goal · repo · done when …`. A request for another goal, repo or
+question is a new thread: do not start it here; offer a new session with a ready
+prompt (create it yourself when a tool allows), a deliberate switch, or parking it
+in the inbox. The three end-of-cycle options are each marked `[here]` or
+`[new session: repo]`. Method: the `session-focus` skill; the `thread-check.sh`
+hook repeats the thread before every owner message.
+
 ## Operating instructions
 
 **Session start.** The `SessionStart` hook prints the ritual, the research
