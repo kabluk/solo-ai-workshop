@@ -1,0 +1,3 @@
+# Items changed on purpose; kit-sync.sh reports them and never overwrites them.
+skills/harvest          # generalised for a public template (no project names, "decision log")
+skills/external-review  # template wording plus the idea-mode paragraph in PROMPT.md

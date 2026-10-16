@@ -32,6 +32,35 @@ this repository. Products live in their own repositories.
    survivors get market analysis. Analysis of an idea whose first step the
    founder cannot take is thrown-away work.
 
+## One session, one thread
+
+Once the session's goal is clear (usually after one or two owner messages; at once
+when the first message states a concrete task), give a start block. Until then,
+clarify and answer, but change no file and make no commit; the block comes before
+the first file change at the latest. Every new task inside the thread gets one too:
+
+```
+**Thread:** goal · repo · done when …
+**Skills:**
+- `name` — what it does for this task
+```
+
+Skills come from the catalog (`skill-catalog`, printed at session start), two or
+three, each with its use for this task. None fits → say so ("none fits — by
+hand"); a repeating task with no skill is a `harvest` candidate. A request for another goal, repo or
+question is a new thread: do not start it here; offer a new session with a ready
+prompt (create it yourself when a tool allows), a deliberate switch, or parking it
+in the inbox. The three end-of-cycle options are each marked `[here]` or
+`[new session: repo]`. Method: the `session-focus` skill; the `thread-check.sh`
+hook repeats the thread before every owner message.
+
+## Owner buttons
+
+A request to merge a PR or press any owner-only button is a short plain-language
+card, never a bare link: link first; what it is in one sentence; what changes
+after it and what does not; the risk and how to undo it; the exact taps; what
+happens next. Details: `session-focus`, playbook P-18.
+
 ## Operating instructions
 
 **Session start.** The `SessionStart` hook prints the ritual, the research
@@ -74,6 +103,7 @@ missing key, say once which variable or CI secret it belongs in.
 | Cross-project working agreements (P-NN) | `docs/playbook/COLLABORATION.md` |
 | Harvest ledger | `docs/playbook/HARVEST.md` |
 | Research | `research/YYYY-MM-slug/REPORT.md` |
+| Which skill for what (every skill by job; printed at session start) | `.claude/skills/skill-catalog/` |
 | Skills: `harvest`, `external-review`, `writing-for-agents` | `.claude/skills/` |
 | Feasibility gates (installed separately) | `.claude/skills/idea-gates/` |
 | Hooks | `.claude/hooks/`, wired in `.claude/settings.json` |
