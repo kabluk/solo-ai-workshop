@@ -56,8 +56,10 @@ hook repeats the thread before every owner message.
 
 ## Owner buttons
 
-A request to merge a PR or press any owner-only button is a short plain-language
-card, never a bare link: link first; what it is in one sentence; what changes
+A merge that stays inside the repository (CI green, nothing deploys from `main`)
+the assistant does itself and reports in one line. A merge or button that reaches
+outside (a live site, a client, money, secrets) is the owner's: a short
+plain-language card, never a bare link: link first; what it is in one sentence; what changes
 after it and what does not; the risk and how to undo it; the exact taps; what
 happens next. Details: `session-focus`, playbook P-18.
 
